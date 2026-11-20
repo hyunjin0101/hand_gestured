@@ -1,0 +1,3 @@
+-r requirements.txt
+# Legacy H5 model loading; compatibility with the missing model file is unverified.
+tensorflow==2.15.1

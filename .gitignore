@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+.DS_Store
+Thumbs.db
+*.log
+# Model weights/data should be reviewed before intentional publication.
+models/*.h5
+models/*.keras
+models/*.npy
+models/*.npz
+# Locally recorded camera footage may contain personal information.
+recordings/
+*.mp4
+*.avi
