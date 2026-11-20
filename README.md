@@ -1,5 +1,8 @@
 # Gesture-Driven AR Effects 🎥✋
 
+**Hyunjin Kim (김현진) · Aspiring Computer Vision / Spatial AI Engineer**  
+실시간 영상 인식과 AR 인터랙션을 구현하는 컴퓨터 비전 개발자 지망생의 대표 프로젝트입니다.
+
 **MediaPipe 기반 실시간 손 추적·제스처 분류 및 AR 이펙트 시스템**  
 *Real-Time Hand Tracking, Gesture Recognition & Interactive AR Effects*
 
@@ -148,5 +151,5 @@ python -m unittest discover -s tests -v
 
 ---
 
-**Contact / Portfolio**: 본인 GitHub 프로필 또는 이메일 링크를 여기에 추가하세요.  
+**Contact / Portfolio**: [GitHub — hyunjin0101](https://github.com/hyunjin0101)  
 **Project note:** 원본 실험은 `notebooks/effect_experiments.ipynb`에서 확인할 수 있습니다. 업로드 전 모든 이미지·오디오·모델의 공개 권한을 확인하세요.
