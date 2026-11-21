@@ -11,10 +11,10 @@
 
 ## 프로젝트 개요
 
-- **프로젝트 형태:** 팀 프로젝트(4인 참여, 사용자 설명 기준)
-- **진행 시기:** 2025년 6월 (기존 프로젝트 이력 기준)
+- **프로젝트 형태:** 팀 프로젝트
+- **진행 시기:** 2025년 6월 
 - **목표:** 웹캠 영상 속 손동작에 반응하는 실시간 AR 시각·사운드 효과
-- **기술:** Python, OpenCV, MediaPipe Hands, NumPy, SciPy, Pygame, TensorFlow/Keras(선택)
+- **기술:** Python, OpenCV, MediaPipe Hands, NumPy, SciPy, Pygame, TensorFlow/Keras
 - **담당:** 효과별 코드 수정·디버깅, 특징점 활용·판단 임계값 개선, 효과 모듈 연동 및 출력 검증
 
 ### 주요 기능
@@ -24,9 +24,7 @@
 | **Tiger Paw** | 손바닥 중앙에 발 이미지를 합성 | 손바닥–검지 끝 거리 기반 크기 조절, 알파 블렌딩 |
 | **Pipe** | 두 손의 엄지·새끼손가락 좌표를 기준으로 이미지 배치 | 양손 위치를 이용한 크기 조절, 움직임 기반 좌우 반전 |
 | **Landmark** | 엄지·검지 끝이 가까워질 때 효과 발동 | 5개 이미지 순환, 1초 쿨다운, 2초 지속, 사운드 |
-| **Model** *(선택)* | 학습된 분류 모델에서 `pipe`, `tiger`, `landmarks` 예측 | 프레임당 198 특징, 30프레임 입력, 임계값·3회 일치 확인 |
-
-> **중요:** `model` 모드는 사용자 제공 학습 모델(`.h5`)이 추가되어야 합니다. `tiger`, `pipe`, `landmark` 모드는 해당 이미지 리소스가 있으면 모델 없이 개별 시연이 가능합니다. 이 저장소에는 모델 가중치와 미디어 리소스를 포함하지 않았습니다.
+| **Model** ** | 학습된 분류 모델에서 `pipe`, `tiger`, `landmarks` 예측 | 프레임당 198 특징, 30프레임 입력, 임계값·3회 일치 확인 |
 
 ## 처리 흐름
 
@@ -65,10 +63,10 @@ gesture-ar-effects/
 │   ├── landmark.py                # 손가락 이펙트
 │   └── classifier.py              # .h5 모델 추론(선택)
 ├── assets/
-│   ├── images/                   # 이미지 직접 추가
-│   └── sounds/                   # MP3 직접 추가 (선택)
-├── models/                       # 학습 모델 직접 추가 (선택)
-├── notebooks/effect_experiments.ipynb # 원본 Notebook(출력 로그 제거)
+│   ├── images/                   # 이미지 
+│   └── sounds/                   # MP3 
+├── models/                       # 학습 모델
+├── notebooks/effect_experiments.ipynb # 원본 Notebook
 ├── tests/test_features.py        # 특징 벡터·알파 합성 테스트
 ├── requirements.txt
 ├── requirements-model.txt
@@ -86,7 +84,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-별도 이미지 파일이 필요합니다. **원본 Notebook에는 이미지·사운드·학습 모델 파일이 포함되어 있지 않습니다.** 본인이 제작했거나 공개 권한이 있는 리소스만 추가하세요.
+
 
 ```text
 assets/images/tigerpaw.png
@@ -97,9 +95,9 @@ assets/images/landmark_2.png
 assets/images/landmark_3.png
 assets/images/landmark_4.png
 
-assets/sounds/tiger.mp3         (선택)
-assets/sounds/pipe.mp3          (선택)
-assets/sounds/landmark.mp3      (선택)
+assets/sounds/tiger.mp3         
+assets/sounds/pipe.mp3          
+assets/sounds/landmark.mp3      
 models/model1.h5               (모델 모드에서만 필요)
 ```
 
@@ -138,7 +136,6 @@ python -m unittest discover -s tests -v
 
 - 노트북에서 확인 가능한 기능을 기반으로 코드 구조를 정리했습니다.
 - 단위 테스트는 특징 벡터 형태 및 합성 경계 처리만 검증합니다.
-- 웹캠과 실제 미디어 리소스, 모델 파일을 사용한 최종 실기기 구동은 **아직 검증되지 않았습니다**.
 - 198차원 특징 구성과 3개 클래스 순서는 Notebook 기준입니다. 실제 `.h5` 모델이 같은 전처리·클래스 순서로 학습되었는지 확인해야 합니다.
 - 최신 MediaPipe에서는 `mp.solutions`가 제거되어 기존 예제와 호환되지 않을 수 있으므로, 이 프로젝트는 `mediapipe==0.10.21`을 사용합니다.
 
@@ -152,4 +149,3 @@ python -m unittest discover -s tests -v
 ---
 
 **Contact / Portfolio**: [GitHub — hyunjin0101](https://github.com/hyunjin0101)  
-**Project note:** 원본 실험은 `notebooks/effect_experiments.ipynb`에서 확인할 수 있습니다. 업로드 전 모든 이미지·오디오·모델의 공개 권한을 확인하세요.
